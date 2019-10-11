@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MotivationalActivity">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MotivaitonalToolbar_id"
+        android:background="@color/colorPrimary"
+
+        >
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:id="@+id/MotivationalBackArrow_id"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motivaitonal"
+            android:textColor="@color/White"
+            android:layout_marginLeft="50sp"
+            android:textSize="30sp"
+
+            />
+
+
+
+    </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/MotivaitonalToolbar_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ContributerMotivationalRV_id"
+
+        ></android.support.v7.widget.RecyclerView>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/MotivationalBannerAdView_id"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0sp"
+        ads:adSize="BANNER"
+
+        ads:adUnitId="@string/BannerAdID">
+    </com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>

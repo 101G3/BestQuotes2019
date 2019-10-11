@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/navgrounp_removeads_id"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/Nav_RemoveAds_id"
+            android:icon="@drawable/ic_remove_circle_outline_black_24dp"
+            android:title="Remove Ads" />
+    </group>
+    <group
+        android:id="@+id/navgrounp_rateus_id"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/Nav_RateUs_id"
+            android:icon="@drawable/ic_rateus_black_24dp"
+            android:title="RATE US IN APP STORE" />
+    </group>
+    <group
+        android:id="@+id/navgroup_downloadother_id"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/Nav_DownloadOtherApp_id"
+            android:icon="@drawable/ic_view_module_black_24dp"
+            android:title="DOWNLOAD OTHER APPS" />
+    </group>
+    <group
+        android:id="@+id/navgroup_aboutus_is"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/Nav_AboutUs_id"
+            android:icon="@drawable/ic_device_hub_black_24dp"
+            android:title="ABOUT US" />
+    </group>
+
+
+</menu>

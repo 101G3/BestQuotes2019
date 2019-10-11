@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/White">
+
+    <ImageView
+        android:id="@+id/backimage_id"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10sp"
+        android:src="@drawable/cancel" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/DetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="170dp"
+        android:background="@color/White">
+
+
+        <ImageView
+            android:id="@+id/DetailMainImage"
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:layout_height="390px"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/imagefive" />
+
+
+        <ImageView
+            android:id="@+id/DetailDownload_id"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="90sp"
+            android:layout_marginTop="300sp"
+            android:src="@drawable/ic_file_download_black_24dp" />
+
+        <TextView
+            android:id="@+id/DetailDonwloadDis_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DetailDownload_id"
+            android:layout_marginLeft="83sp"
+            android:text="Download"
+            android:textSize="13sp"
+
+            />
+
+        <ImageView
+            android:id="@+id/DetailLike_id"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="170sp"
+            android:layout_marginTop="300sp"
+            android:src="@drawable/ic_wallpaper_black_24dp"
+
+            />
+
+        <TextView
+            android:id="@+id/DetailLikeDis_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DetailLike_id"
+            android:layout_marginLeft="180sp"
+            android:text="Set"
+
+            />
+
+        <ImageView
+            android:id="@+id/DetailShare_id"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_marginLeft="240sp"
+            android:layout_marginTop="300sp"
+            android:src="@drawable/ic_share_black_24dp" />
+
+        <TextView
+            android:id="@+id/DetailShareDis_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/DetailShare_id"
+            android:layout_marginLeft="245sp"
+            android:text="Share"
+
+            />
+
+
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/DetailBannerAdView_id"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="60sp"
+        android:layout_marginTop="0sp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/BannerAdID">
+    </com.google.android.gms.ads.AdView>
+
+
+</RelativeLayout>

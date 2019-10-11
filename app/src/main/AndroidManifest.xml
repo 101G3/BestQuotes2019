@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bestquotes.with.coolstatus">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/imageicon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/imageicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4580368318288335~5075443539" />
+
+        <activity android:name="com.bestquotes.with.coolstatus.SliderScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.bestquotes.with.coolstatus.MainActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.SmileActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.AttitudeActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.ConfidenceActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.LoveActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.SadActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.FaliureActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.MotivationalActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.HappinessActivity" />
+        <activity android:name="com.bestquotes.with.coolstatus.DetailActivity" />
+    </application>
+
+</manifest>

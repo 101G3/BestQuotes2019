@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_All_id"  android:state_checked="true" android:color="@color/TextColorRed" android:title="All" android:icon="@drawable/ic_whatshot_black_24dp"/>
+     <item android:id="@+id/menu_Poets_id" android:title="Menu" android:icon="@drawable/ic_album_black_24dp"/>
+
+    <item android:id="@+id/menu_Setting_id" android:title="Setting" android:icon="@drawable/ic_settings_black_24dp"/>
+
+
+
+
+
+</menu>

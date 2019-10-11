@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ed0511</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="BackGround">#bff9af</color>
+    <color name="White">#ffffff</color>
+    <color name="TextColorRed" >#ed0511</color>
+    <color name="Green">#26bf26</color>
+    <color name="SkyBlue">#12a7be</color>
+    <color name="Orange">#ff6d05</color>
+    <color name="settingbg">#d0e7e2</color>
+    <color name="darken_grey">#aeaba8</color>
+    <color name="DarkBlue">#0055ff</color>
+    <color name="Black">#000000</color>
+
+
+</resources>

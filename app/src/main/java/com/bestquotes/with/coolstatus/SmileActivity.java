@@ -1,0 +1,151 @@
+package com.bestquotes.with.coolstatus;
+
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SmileActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    //  Varibales for Main Images Downloading
+    List<MainImagesGTST> listgtst;
+    DatabaseReference firstreference;
+    MainImagesRecyclerViewAdapter imagesRecyclerViewAdapter;
+    ImageView Backimg;
+    AdView adView;
+    RelativeLayout AdviewRL;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_smile);
+        Backimg = (ImageView) findViewById(R.id.SmileBackArrow_id);
+        AdviewRL = (RelativeLayout)findViewById(R.id.SmileAdViewRL);
+        recyclerView = (RecyclerView) findViewById(R.id.ContributerActionRV_id);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+
+          // Banner Ad View
+
+        adView = (AdView)findViewById(R.id.SmileBannerAdView_id);
+        adView.setAdListener(new AdListener()
+                             {
+                                 @SuppressLint("ResourceAsColor")
+                                 @Override
+                                 public void onAdLoaded() {
+                                     super.onAdLoaded();
+                                     adView.setVisibility(View.VISIBLE);
+                                     adView.setBackgroundColor(R.color.Black);
+                                 }
+                             }
+        );
+        MobileAds.initialize(SmileActivity.this, String.valueOf(R.string.AppAdID));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+
+
+        // Back Button Code
+
+        Backimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+
+// Code For Main Image Dwonaload from firebase
+
+            listgtst = new ArrayList<>();
+            firstreference = FirebaseDatabase.getInstance().getReference("Smile");
+            firstreference.keepSynced(true);
+            firstreference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Log.d("Tone", "MainActivity : addValueListener : OnDataChange Call");
+                    for (int i = 0; i < 10; i++) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            MainImagesGTST gt = dataSnapshot1.getValue(MainImagesGTST.class);
+                            listgtst.add(gt);
+                        }
+                        imagesRecyclerViewAdapter = new MainImagesRecyclerViewAdapter(SmileActivity.this, listgtst);
+                        Log.d("Tone", "MainActivity : addValueListener : Adapter Set Called");
+                        recyclerView.setAdapter(imagesRecyclerViewAdapter);
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Log.d("Tone","MainActivity : addValueListener : OnCancelled Call");
+                }
+            });
+            Log.d("Tone"," MainActivity : OnStart End");
+        }
+
+
+        else
+        {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(SmileActivity.this);
+            builder1.setMessage("No Internet connection. Make sure that WiFi or Mobile Data is turn on,then try again.");
+            builder1.setTitle("Unable to connect to the internet");
+            builder1.setCancelable(true);
+            builder1.setNegativeButton(
+                    "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+
+
+
+    }
+

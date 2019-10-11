@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Best Quotes</string>
+    <string name="Navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="Navigation_drawer_close">Close Navigation Drawer</string>
+
+
+    <!--This App Ad IDs is from Waqar Ahmed Bhatti  ( Comprizon )  -->
+
+    <string name="NativeAdID">ca-app-pub-4580368318288335/8543915252</string>
+    <string name="InterstitialAdID">ca-app-pub-4580368318288335/8308111539</string>
+    <string name="BannerAdID">ca-app-pub-4580368318288335/6585279407</string>
+    <string name="AppAdID">ca-app-pub-4580368318288335~5075443539</string>
+
+
+</resources>
